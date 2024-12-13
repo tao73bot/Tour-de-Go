@@ -167,21 +167,72 @@
 
 //** The empty interface **//
 
-package main
+// package main
 
-import "fmt"
+// import "fmt"
 
-func main() {
-	var i interface{}
-	describe(i)
+// func main() {
+// 	var i interface{}
+// 	describe(i)
 
-	i = 42
-	describe(i)
+// 	i = 42
+// 	describe(i)
 
-	i = "hello"
-	describe(i)
-}
+// 	i = "hello"
+// 	describe(i)
+// }
 
-func describe(i interface{}) {
-	fmt.Printf("(%v, %T)\n", i, i)
-}
+// func describe(i interface{}) {
+// 	fmt.Printf("(%v, %T)\n", i, i)
+// }
+
+//** Type assertions **//
+
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	var i interface{} = "Taohid"
+// 	t := i.(string)
+// 	fmt.Println(t)
+
+// 	t, ok := i.(string)
+// 	fmt.Println(t, ok)
+
+// 	f, ok := i.(float64)
+// 	fmt.Println(f, ok)
+
+// 	b,_ := i.(uint)
+// 	fmt.Println(b)
+
+// 	f = i.(float64) // panic: interface conversion: interface {} is string, not float64
+// 	fmt.Println(f)
+// }
+
+//** Type switches **//
+
+// package main
+
+// import "fmt"
+
+// func checkType(i interface{}) {
+// 	switch v := i.(type) {
+// 	case int:
+// 		fmt.Println("Integer and value is ", v)
+// 	case string:
+// 		fmt.Println("String and value is ", v)
+// 	case float64:
+// 		fmt.Println("Float and value is ", v)
+// 	default:
+// 		fmt.Printf("Unknown type %T\n", v)
+
+// 	}
+// }
+
+// func main() {
+// 	checkType(21)
+// 	checkType("Hello")
+// 	checkType(3.14)
+// 	checkType(true)
+// }
